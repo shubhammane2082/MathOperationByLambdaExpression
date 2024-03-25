@@ -66,12 +66,15 @@ public class NumberPlaylist {
 		//create stream and iterate
 		numberPlaylist.stream().forEach(n -> 
 		System.out.println("created stream here and iterate through each : "+n));
+		System.out.println();
 		
 		//Transform all element to double 
-		List<Double> evenstremList = numberPlaylist.stream().
+		List<Double> evenstreamList = numberPlaylist.stream().
 		                        filter(evenfunction)
 		                        .map(convertTodouble)
 		                        .collect(Collectors.toList());
+		
+		System.out.println("List of Even Numbers is : "+evenstreamList);
 	}
 
 }
