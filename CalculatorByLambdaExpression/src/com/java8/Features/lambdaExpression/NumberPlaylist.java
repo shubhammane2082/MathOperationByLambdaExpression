@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlaylist {
 
@@ -53,6 +54,17 @@ public class NumberPlaylist {
 		//print each element in double
 		Function<Integer, Double> convertTodouble= n -> n.doubleValue();
 		numberPlaylist.forEach(n -> System.out.println("Value after converting is : "+convertTodouble.apply(n)));
+		System.out.println();
+		
+		//printEvenfunction
+		
+		Predicate<Integer> evenfunction = n -> n>0 && n%2==0;
+		numberPlaylist.forEach(n -> System.out.println("Value of "+n+" is "+evenfunction.test(n)));
+		System.out.println();
+		
+		//create stream and iterate
+		numberPlaylist.stream().forEach(n -> 
+		System.out.println("created stream here and iterate through each : "+n));
 		
 			
 	}
