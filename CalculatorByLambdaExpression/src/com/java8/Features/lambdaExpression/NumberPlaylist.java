@@ -71,10 +71,18 @@ public class NumberPlaylist {
 		//Transform all element to double 
 		List<Double> evenstreamList = numberPlaylist.stream().
 		                        filter(evenfunction)
+		                        .peek(n -> System.out.println("Even Number is : "+n))
 		                        .map(convertTodouble)
 		                        .collect(Collectors.toList());
 		
 		System.out.println("List of Even Numbers is : "+evenstreamList);
+		System.out.println();
+		
+		Integer firstevenNumber=numberPlaylist.stream()
+				                                      .filter(evenfunction)
+				                                      .findFirst()
+				                                      .orElse(null);
+		System.out.println("First Even Number is : "+firstevenNumber);
 	}
 
 }
