@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlaylist {
 
@@ -48,6 +49,10 @@ public class NumberPlaylist {
 		numberPlaylist.forEach(n ->{
 			System.out.println("Number List element by using for Each is : "+n);
 		});
+		System.out.println();
+		//print each element in double
+		Function<Integer, Double> convertTodouble= n -> n.doubleValue();
+		numberPlaylist.forEach(n -> System.out.println("Value after converting is : "+convertTodouble.apply(n)));
 		
 			
 	}
