@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class NumberPlaylist {
 
@@ -113,5 +114,8 @@ public class NumberPlaylist {
 		boolean anyMatch = numberPlaylist.stream().anyMatch(evenfunction);
 		System.out.println("All elements are even :"+allMatch);
 		System.out.println("At least one element is even in list : "+anyMatch);
+		
+		List<Integer> sortBynumber = numberPlaylist.stream().sorted().collect(Collectors.toList());
+		System.out.println("Sorted Array List is : "+sortBynumber);
         }
 }
