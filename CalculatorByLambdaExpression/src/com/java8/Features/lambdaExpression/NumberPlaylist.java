@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class NumberPlaylist {
 
@@ -66,7 +67,11 @@ public class NumberPlaylist {
 		numberPlaylist.stream().forEach(n -> 
 		System.out.println("created stream here and iterate through each : "+n));
 		
-			
+		//Transform all element to double 
+		numberPlaylist.stream().
+		                        filter(evenfunction)
+		                        .map(convertTodouble)
+		                        .collect(Collectors.toList());
 	}
 
 }
