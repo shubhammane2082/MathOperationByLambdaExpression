@@ -2,6 +2,7 @@ package com.java8.Features.lambdaExpression;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
@@ -83,6 +84,19 @@ public class NumberPlaylist {
 				                                      .findFirst()
 				                                      .orElse(null);
 		System.out.println("First Even Number is : "+firstevenNumber);
-	}
-
+		System.out.println();
+		
+		Integer min=numberPlaylist.stream()
+				                           .filter(evenfunction)
+				                           .min((x,y) -> x-y)
+				                           .orElse(null);
+		
+		System.out.println("Minimum Even Number is : "+min);
+		
+		Integer max=numberPlaylist.stream()
+				                           .max(Comparator.comparing(Integer::intValue))
+				                           .orElse(null);
+		
+		System.out.println("Maximum Even Number is : "+max);
+        }
 }
