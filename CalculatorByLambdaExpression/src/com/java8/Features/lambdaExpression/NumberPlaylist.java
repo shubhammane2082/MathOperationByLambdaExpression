@@ -68,7 +68,7 @@ public class NumberPlaylist {
 		System.out.println("created stream here and iterate through each : "+n));
 		
 		//Transform all element to double 
-		numberPlaylist.stream().
+		List<Double> evenstremList = numberPlaylist.stream().
 		                        filter(evenfunction)
 		                        .map(convertTodouble)
 		                        .collect(Collectors.toList());
