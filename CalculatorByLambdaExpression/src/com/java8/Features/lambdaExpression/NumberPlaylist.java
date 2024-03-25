@@ -106,6 +106,12 @@ public class NumberPlaylist {
 		
 		double avg=sum/count;
 		System.out.println("Sum of Number Stream is : "+sum);
-		System.out.println("Avg of Number Stream is : "+avg);
+		System.out.println("Avg of Number Stream is : "+avg+"\n");
+		
+		//print all match even number or At least one match
+		boolean allMatch = numberPlaylist.stream().allMatch(evenfunction);
+		boolean anyMatch = numberPlaylist.stream().anyMatch(evenfunction);
+		System.out.println("All elements are even :"+allMatch);
+		System.out.println("At least one element is even in list : "+anyMatch);
         }
 }
